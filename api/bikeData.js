@@ -18,7 +18,7 @@ const getBikes = (uid) => new Promise((resolve, reject) => {
 const createBike = (bikeObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/bike.json`, bikeObj)
     .then((response) => {
-      const payload = { firebaseKey: response.data.make };
+      const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/bike/${response.data.name}.json`, payload).then(() => {
         getBikes().then(resolve);
       });
