@@ -11,6 +11,7 @@ const initialState = {
   model: '',
   year: '',
   image: '',
+  color: '',
   complete: false,
 };
 
@@ -66,6 +67,18 @@ function BikeForm({ obj }) {
         <FloatingLabel controlId="floatingInput3" label="Color" className="mb-3">
           <Form.Control type="text" placeholder="Enter the Color" name="color" value={formInput.color} onChange={handleChange} required />
         </FloatingLabel>
+        <Form.Check
+          className="text-white mb-3"
+          type="switch"
+          id="complete"
+          name="complete"
+          label="Is the bike complete?"
+          checked={formInput.complete}
+          onChange={(e) => setFormInput((prevState) => ({
+            ...prevState,
+            complete: e.target.checked,
+          }))}
+        />
         <Button className="btn btn-primary btn-lg copy-btn" type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Bike</Button>
       </Form>
     </>
@@ -78,6 +91,7 @@ BikeForm.propTypes = {
     model: PropTypes.string,
     year: PropTypes.string,
     image: PropTypes.string,
+    color: PropTypes.string,
     complete: PropTypes.bool,
     firebaseKey: PropTypes.string,
   }),

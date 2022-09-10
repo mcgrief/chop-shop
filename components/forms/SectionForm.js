@@ -79,6 +79,18 @@ function SectionForm({ obj }) {
             ))}
           </Form.Select>
         </FloatingLabel>
+        <Form.Check
+          className="text-white mb-3"
+          type="switch"
+          id="complete"
+          name="complete"
+          label="Finish the section?"
+          checked={formInput.complete}
+          onChange={(e) => setFormInput((prevState) => ({
+            ...prevState,
+            complete: e.target.checked,
+          }))}
+        />
         <Button className="btn btn-primary btn-lg copy-btn" type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Section</Button>
       </Form>
     </>

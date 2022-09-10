@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
-import { getBikes } from '../api/bikeData';
+import { getIncompleteBikes } from '../api/bikeData';
 import BikeCard from '../components/BikeCard';
 
 export default function Home() {
@@ -11,11 +11,11 @@ export default function Home() {
   const { user } = useAuth();
 
   const getAllBikes = () => {
-    getBikes(user.uid).then(setBikes);
+    getIncompleteBikes(user.uid).then(setBikes);
   };
   useEffect(() => {
     getAllBikes();
-  }, []);
+  }, [bikes]);
 
   return (
     <div>
@@ -25,7 +25,7 @@ export default function Home() {
         </Link>
         <div className="d-flex flex-wrap">
           {bikes?.map((moto) => (
-            <BikeCard key={moto?.firebaseKey} bikeObj={moto} onUpdate={getBikes} />
+            <BikeCard key={moto?.firebaseKey} bikeObj={moto} onUpdate={getIncompleteBikes} />
           ))}
         </div>
 

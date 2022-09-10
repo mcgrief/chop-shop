@@ -51,6 +51,18 @@ const getBikeSections = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getCompletedBikes = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/bike.json?orderBy="complete"&equalTo=true`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
+const getIncompleteBikes = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/bike.json?orderBy="complete"&equalTo=false`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
 export {
   getBikes,
   createBike,
@@ -58,4 +70,6 @@ export {
   deleteSingleBike,
   updateBike,
   getBikeSections,
+  getCompletedBikes,
+  getIncompleteBikes,
 };
