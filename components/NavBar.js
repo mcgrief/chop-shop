@@ -21,7 +21,12 @@ export default function NavBar() {
             <li className="nav-item">
               <Link passHref href="/">
                 <a className="nav-link">
-                  Home
+                  Back to the Garage
+                </a>
+              </Link>
+              <Link passHref href="/completed">
+                <a className="nav-link">
+                  Finished Projects
                 </a>
               </Link>
             </li>

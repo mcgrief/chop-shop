@@ -24,8 +24,8 @@ const getSinglePart = (firebaseKey) => new Promise((resolve, reject) => {
 const createPart = (partObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/part.json`, partObj)
     .then((response) => {
-      const payload = { firebaseKey: response.data.title };
-      axios.patch(`${dbUrl}/part/${response.data.title}.json`, payload)
+      const payload = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/part/${response.data.name}.json`, payload)
         .then(resolve);
     }).catch(reject);
 });

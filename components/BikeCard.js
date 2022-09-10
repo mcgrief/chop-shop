@@ -7,7 +7,7 @@ import { deleteBikeSections } from '../api/mergedData';
 
 export default function BikeCard({ bikeObj, onUpdate }) {
   const deleteThisBike = () => {
-    if (window.confirm(`Delete ${bikeObj.make}?`)) {
+    if (window.confirm(`Delete ${bikeObj.model}?`)) {
       deleteBikeSections(bikeObj.firebaseKey).then(() => onUpdate());
     }
   };
@@ -36,6 +36,7 @@ BikeCard.propTypes = {
   bikeObj: PropTypes.shape({
     firebaseKey: PropTypes.string,
     make: PropTypes.string,
+    model: PropTypes.string,
     image: PropTypes.string,
     complete: PropTypes.bool,
   }).isRequired,

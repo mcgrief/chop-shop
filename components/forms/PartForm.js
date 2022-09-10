@@ -58,7 +58,7 @@ function PartForm({ obj }) {
       <Form onSubmit={handleSubmit}>
         <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Section Part</h2>
         <FloatingLabel controlId="floatingInput1" label="title" className="mb-3">
-          <Form.Control type="text" placeholder="Enter the Part Title" name="make" value={formInput.title} onChange={handleChange} required />
+          <Form.Control type="text" placeholder="Enter the Part Title" name="title" value={formInput.title} onChange={handleChange} required />
         </FloatingLabel>
         <FloatingLabel controlId="floatingInput3" label="Details" className="mb-3">
           <Form.Control type="text" placeholder="Enter Details" name="details" value={formInput.details} onChange={handleChange} required />
@@ -83,6 +83,18 @@ function PartForm({ obj }) {
             ))}
           </Form.Select>
         </FloatingLabel>
+        <Form.Check
+          className="text-white mb-3"
+          type="switch"
+          id="complete"
+          name="complete"
+          label="Is this part done?"
+          checked={formInput.complete}
+          onChange={(e) => setFormInput((prevState) => ({
+            ...prevState,
+            complete: e.target.checked,
+          }))}
+        />
         <Button className="btn btn-primary btn-lg copy-btn" type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Part</Button>
       </Form>
     </>
