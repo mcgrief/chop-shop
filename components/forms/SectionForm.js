@@ -39,7 +39,7 @@ function SectionForm({ obj }) {
     } else {
       const payload = { ...formInput, uid: user.uid };
       createSection(payload).then(() => {
-        router.push('/');
+        router.push(`/bike/${formInput.bikeId}`);
       });
     }
   };

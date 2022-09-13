@@ -48,7 +48,7 @@ function PartForm({ obj }) {
     } else {
       const payload = { ...formInput, uid: user.uid };
       createPart(payload).then(() => {
-        router.push('/');
+        router.push(`/section/${formInput.sectionId}`);
       });
     }
   };
