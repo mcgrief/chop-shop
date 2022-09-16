@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Link from 'next/link';
+import Search from './SearchBar';
 import { signOut } from '../utils/auth';
 
 export default function NavBar() {
@@ -24,15 +25,22 @@ export default function NavBar() {
                   Back to the Garage
                 </a>
               </Link>
+            </li>
+            <li className="nav-item">
               <Link passHref href="/completed">
                 <a className="nav-link">
                   Finished Projects
                 </a>
               </Link>
             </li>
-            <button type="button" className="btn btn-danger" onClick={signOut}>
-              Sign Out
-            </button>
+            <li className="nav-item">
+              <Search />
+            </li>
+            <li className="nav-item">
+              <button type="button" className="btn btn-danger" onClick={signOut}>
+                Sign Out
+              </button>
+            </li>
           </ul>
         </div>
       </div>
