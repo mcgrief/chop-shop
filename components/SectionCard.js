@@ -37,10 +37,10 @@ function SectionCard({ sectionObj, onUpdate }) {
           ))}
         </ul>
         <Link href={`/section/${sectionObj.firebaseKey}`} passHref>
-          <Button className="btn btn-danger btn-lg copy-btn" type="button" onClick="">VIEW</Button>
+          <Button className="btn btn-dark btn-lg copy-btn" type="button" onClick="">VIEW</Button>
         </Link>
         <Link href={`/section/edit/${sectionObj.firebaseKey}`} passHref>
-          <Button className="btn btn-danger btn-lg copy-btn" type="button" onClick="">UPDATE</Button>
+          <Button className="btn btn-dark btn-lg copy-btn" type="button" onClick="">UPDATE</Button>
         </Link>
         <Button className="btn btn-danger btn-lg copy-btn" type="button" onClick={deleteThisSection}>DELETE</Button>
       </Card>

@@ -20,10 +20,10 @@ export default function BikeCard({ bikeObj, onUpdate }) {
 
         <>
           <Link href={`/bike/${bikeObj.firebaseKey}`} passHref>
-            <Button className="btn btn-danger btn-lg copy-btn" type="button" onClick="">View</Button>
+            <Button className="btn btn-dark btn-lg copy-btn" type="button" onClick="">View</Button>
           </Link>
           <Link href={`/bike/edit/${bikeObj.firebaseKey}`} passHref>
-            <Button className="btn btn-danger btn-lg copy-btn" type="button" onClick="">Update</Button>
+            <Button className="btn btn-dark btn-lg copy-btn" type="button" onClick="">Update</Button>
           </Link>
           <Button className="btn btn-danger btn-lg copy-btn" type="button" onClick={deleteThisBike}>Delete</Button>
         </>

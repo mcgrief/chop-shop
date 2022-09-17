@@ -16,10 +16,10 @@ export default function PartCard({ partObj, onUpdate }) {
       <Card style={{ width: '18rem', margin: '10px' }}>
         <h3>{partObj?.title}</h3>
         <Link href={`/part/${partObj.firebaseKey}`} passHref>
-          <Button className="btn btn-danger btn-lg copy-btn" type="button" onClick="">VIEW</Button>
+          <Button className="btn btn-dark btn-lg copy-btn" type="button" onClick="">VIEW</Button>
         </Link>
         <Link href={`/part/edit/${partObj.firebaseKey}`} passHref>
-          <Button className="btn btn-danger btn-lg copy-btn" type="button" onClick="">UPDATE</Button>
+          <Button className="btn btn-dark btn-lg copy-btn" type="button" onClick="">UPDATE</Button>
         </Link>
         <Button className="btn btn-danger btn-lg copy-btn" type="button" onClick={deleteThisPart}>DELETE</Button>
       </Card>
