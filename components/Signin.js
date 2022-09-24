@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { signIn } from '../utils/auth';
 
@@ -8,12 +9,13 @@ function Signin() {
       style={{
         height: '90vh',
         padding: '30px',
-        maxWidth: '400px',
+        maxWidth: '700px',
         margin: '0 auto',
       }}
     >
-      <h1>Hi there!</h1>
-      <p>Click the button below to login!</p>
+      <h1>
+        <img className="signinLogo" src="/images/logo.png" alt="Chop Shop" />
+      </h1>
       <button type="button" className="btn btn-primary btn-lg copy-btn" onClick={signIn}>
         Sign In
       </button>

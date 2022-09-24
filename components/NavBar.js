@@ -7,7 +7,7 @@ import { signOut } from '../utils/auth';
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark Nav">
       <div className="container-fluid">
 
         <a className="navbar-brand" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
@@ -20,28 +20,32 @@ export default function NavBar() {
 
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-              <Link passHref href="/">
-                <a className="nav-link">
-                  Back to the Garage
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link passHref href="/completed">
-                <a className="nav-link">
-                  Finished Projects
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Search />
-            </li>
-            <li className="nav-item">
-              <button type="button" className="btn btn-danger" onClick={signOut}>
-                Sign Out
-              </button>
-            </li>
+            <div className="left">
+              <li className="nav-item">
+                <Link passHref href="/">
+                  <a className="nav-link">
+                    Back to the Garage
+                  </a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link passHref href="/completed">
+                  <a className="nav-link">
+                    Finished Projects
+                  </a>
+                </Link>
+              </li>
+            </div>
+            <div className="right">
+              <li className="nav-item">
+                <Search />
+              </li>
+              <li className="nav-item">
+                <button type="button" className="btn btn-danger" onClick={signOut}>
+                  Sign Out
+                </button>
+              </li>
+            </div>
           </ul>
         </div>
       </div>
