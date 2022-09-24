@@ -22,8 +22,8 @@ export default function Search() {
   return (
     <Nav.Item className="search ms-auto">
       <Form className="d-flex">
-        <Form.Control type="search" placeholder="Now where did I put that..." className="me-2" aria-label="Search" value={searchInput} onChange={handleChange} onKeyDown={handleSearch} />
-        <Button variant="danger">
+        <Form.Control type="search" placeholder="Find your Bike" className="me-2" aria-label="Search" value={searchInput} onChange={handleChange} onKeyDown={handleSearch} />
+        <Button variant="warning">
           Search
         </Button>
       </Form>
